@@ -15,6 +15,6 @@ class AppTest extends TestCase
 {
     public function testTestAreWorking()
     {
-        $this->assertEquals(3, 1+1);
+        $this->assertEquals(2, 1+1);
     }
 }

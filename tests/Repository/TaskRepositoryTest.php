@@ -2,13 +2,13 @@
 
 namespace App\Tests\Repository;
 
-use App\DataFixtures\UserFixtures;
-use App\Repository\UserRepository;
+use App\DataFixtures\TaskFixtures;
+use App\Repository\TaskRepository;
 use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
 use Liip\TestFixturesBundle\Services\DatabaseTools\AbstractDatabaseTool;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
-class UserRepositoryTest extends KernelTestCase
+class TaskRepositoryTest extends KernelTestCase
 {
     /**
      * @var AbstractDatabaseTool
@@ -25,9 +25,9 @@ class UserRepositoryTest extends KernelTestCase
     {
         self::bootKernel();
 
-        $users = self::getContainer()->get(UserRepository::class)->count([]);
-        $this->databaseTool->loadFixtures([UserFixtures::class]);
+        $tasks = self::getContainer()->get(TaskRepository::class)->count([]);
+        $this->databaseTool->loadFixtures([TaskFixtures::class]);
 
-        $this->assertEquals(10, $users);
+        $this->assertEquals(15, $tasks);
     }
 }
