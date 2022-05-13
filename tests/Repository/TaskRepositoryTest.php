@@ -23,8 +23,6 @@ class TaskRepositoryTest extends KernelTestCase
 
     public function testCount()
     {
-        self::bootKernel();
-
         $tasks = self::getContainer()->get(TaskRepository::class)->count([]);
         $this->databaseTool->loadFixtures([TaskFixtures::class]);
 
