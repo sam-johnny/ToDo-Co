@@ -293,12 +293,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="PHPUnit.phpunit.xml.dist" />
+      <item itemvalue="PHPUnit.DefaultControllerTest.testH1HomePage" />
+      <item itemvalue="PHPUnit.DefaultControllerTest.testRouteHomePage" />
+      <item itemvalue="PHPUnit.LoginTest" />
       <item itemvalue="PHPUnit.TaskDeleteTest.testDeleteTaskWithRoleUser" />
       <item itemvalue="PHPUnit.TaskTest.testRemoveTask" />
-      <item itemvalue="PHPUnit.DefaultControllerTest.testRouteHomePage" />
-      <item itemvalue="PHPUnit.DefaultControllerTest.testH1HomePage" />
-      <item itemvalue="PHPUnit.LoginTest" />
+      <item itemvalue="PHPUnit.phpunit.xml.dist" />
     </list>
     <recent_temporary>
       <list>
