@@ -2,30 +2,20 @@
 
 namespace App\Tests\Repository;
 
-use App\DataFixtures\TaskFixtures;
+use App\Entity\Task;
 use App\Repository\TaskRepository;
-use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
-use Liip\TestFixturesBundle\Services\DatabaseTools\AbstractDatabaseTool;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class TaskRepositoryTest extends KernelTestCase
 {
-    /**
-     * @var AbstractDatabaseTool
-     */
-    protected AbstractDatabaseTool $databaseTool;
 
-    public function setUp(): void
+    public function testFindByIdTask()
     {
-        parent::setUp();
-        $this->databaseTool = static::getContainer()->get(DatabaseToolCollection::class)->get();
-    }
+        self::bootKernel();
 
-    public function testCount()
-    {
-        $tasks = self::getContainer()->get(TaskRepository::class)->count([]);
-        $this->databaseTool->loadFixtures([TaskFixtures::class]);
+        $userRepository = static::getContainer()->get(TaskRepository::class);
+        $tasks = $userRepository->findOneBy(['id' => '1']);
 
-        $this->assertEquals(15, $tasks);
+        $this->assertSame('Title1', $tasks->getTitle());
     }
 }

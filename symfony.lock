@@ -1,4 +1,16 @@
 {
+    "dama/doctrine-test-bundle": {
+        "version": "7.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "4.0",
+            "ref": "56eaa387b5e48ebcc7c95a893b47dfa1ad51449c"
+        },
+        "files": [
+            "./config/packages/test/dama_doctrine_test_bundle.yaml"
+        ]
+    },
     "doctrine/annotations": {
         "version": "1.13",
         "recipe": {
@@ -9,16 +21,13 @@
         }
     },
     "doctrine/cache": {
-        "version": "2.1.1"
+        "version": "2.2.0"
     },
     "doctrine/collections": {
         "version": "1.6.8"
     },
     "doctrine/common": {
         "version": "3.3.0"
-    },
-    "doctrine/data-fixtures": {
-        "version": "1.5.3"
     },
     "doctrine/dbal": {
         "version": "3.3.6"
@@ -40,31 +49,6 @@
             "./src/Repository/.gitignore"
         ]
     },
-    "doctrine/doctrine-fixtures-bundle": {
-        "version": "3.4",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "main",
-            "version": "3.0",
-            "ref": "1f5514cfa15b947298df4d771e694e578d4c204d"
-        },
-        "files": [
-            "./src/DataFixtures/AppFixtures.php"
-        ]
-    },
-    "doctrine/doctrine-migrations-bundle": {
-        "version": "3.2",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "main",
-            "version": "3.1",
-            "ref": "ee609429c9ee23e22d6fa5728211768f51ed2818"
-        },
-        "files": [
-            "./config/packages/doctrine_migrations.yaml",
-            "./migrations/.gitignore"
-        ]
-    },
     "doctrine/event-manager": {
         "version": "1.1.1"
     },
@@ -76,9 +60,6 @@
     },
     "doctrine/lexer": {
         "version": "1.2.3"
-    },
-    "doctrine/migrations": {
-        "version": "3.5.1"
     },
     "doctrine/orm": {
         "version": "2.12.2"
@@ -509,8 +490,8 @@
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "main",
-            "version": "5.3",
-            "ref": "98f1f2b0d635908c2b40f3675da2d23b1a069d30"
+            "version": "6.0",
+            "ref": "8a5b112826f7d3d5b07027f93786ae11a1c7de48"
         },
         "files": [
             "./config/packages/security.yaml"
@@ -615,25 +596,6 @@
             "./config/packages/messenger.yaml"
         ]
     },
-    "symfony/webpack-encore-bundle": {
-        "version": "1.14",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "main",
-            "version": "1.10",
-            "ref": "91f4d29f5ebbd2fcccc71ca55a17d14a17b308e8"
-        },
-        "files": [
-            "./assets/app.js",
-            "./assets/bootstrap.js",
-            "./assets/controllers.json",
-            "./assets/controllers/hello_controller.js",
-            "./assets/styles/app.css",
-            "./config/packages/webpack_encore.yaml",
-            "./package.json",
-            "./webpack.config.js"
-        ]
-    },
     "symfony/yaml": {
         "version": "v6.0.3"
     },
@@ -641,10 +603,10 @@
         "version": "1.2.1"
     },
     "twig/extra-bundle": {
-        "version": "v3.3.8"
+        "version": "v3.4.0"
     },
     "twig/twig": {
-        "version": "v3.3.10"
+        "version": "v3.4.0"
     },
     "webmozart/assert": {
         "version": "1.10.0"
