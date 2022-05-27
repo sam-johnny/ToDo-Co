@@ -1,64 +1,156 @@
 <?php
+
 namespace App\Tests\Entity;
 
-use App\DataFixtures\UserFixtures;
-use App\Entity\User;
-use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
-use Liip\TestFixturesBundle\Services\DatabaseTools\AbstractDatabaseTool;
 
-class UserTest extends AbstractEntityTest
+use App\Entity\Task;
+use App\Entity\User;
+use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Symfony\Component\Validator\ConstraintViolation;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
+
+class UserTest extends KernelTestCase
 {
-    protected AbstractDatabaseTool $databaseTool;
+    protected ValidatorInterface $validator;
 
     public function setUp(): void
     {
         parent::setUp();
-        $this->databaseTool = static::getContainer()->get(DatabaseToolCollection::class)->get();
+        $this->validator = static::getContainer()->get(ValidatorInterface::class);
     }
 
-    public function getEntity(): User
+    public function assertHasErrors($entity, int $number)
+    {
+        $errors = $this->validator->validate($entity);
+
+        $messages = [];
+        /** @var ConstraintViolation $error */
+        foreach ($errors as $error) {
+            $messages[] = $error->getPropertyPath() . ' => ' . $error->getMessage();
+        }
+
+        $this->assertCount($number, $errors, implode(', ', $messages));
+    }
+    public function setUser(): User
     {
         return (new User())
             ->setUsername('Jysaaa')
             ->setPassword('Password')
-            ->setEmail('jysaaa@hotmail.fr');
+            ->setEmail('jysaaa@hotmail.fr')
+            ->setRoles(['ROLE_ADMIN']);
+    }
+
+    public function testIsTrueGetUsername()
+    {
+        $this->assertTrue($this->setUser()->getUsername() === 'Jysaaa');
+    }
+
+    public function testIsTrueGetPassword()
+    {
+        $this->assertTrue($this->setUser()->getPassword() === 'Password');
+    }
+
+    public function testIsTrueGetEmail()
+    {
+        $this->assertTrue($this->setUser()->getEmail() === 'jysaaa@hotmail.fr');
+    }
+
+    public function testIsTrueGetRoles()
+    {
+        $this->assertTrue($this->setUser()->getRoles() === ['ROLE_ADMIN']);
+    }
+
+    public function testIsTrueGetSalt()
+    {
+        $this->assertTrue($this->setUser()->getSalt() === null);
+    }
+
+    public function testIsFalseGetUsername()
+    {
+        $this->assertFalse($this->setUser()->getUsername() === 'hahaha');
+    }
+
+    public function testIsFalseGetPassword()
+    {
+        $this->assertFalse($this->setUser()->getPassword() === 'hahaha');
+    }
+
+    public function testIsFalseGetEmail()
+    {
+        $this->assertFalse($this->setUser()->getEmail() === 'hahaha');
+    }
+
+    public function testIsFalseGetRoles()
+    {
+        $this->assertFalse($this->setUser()->getRoles() === ['ROLE_USER']);
+    }
+
+    public function testIsFalseGetSalt()
+    {
+        $this->assertFalse($this->setUser()->getSalt() === "hahah");
+    }
+
+    public function testIdIsEmpty()
+    {
+        $user = new User();
+        $this->assertEmpty($user->getId());
+    }
+
+    public function testRoleIsEmpty()
+    {
+        $user = new User();
+        $this->assertEmpty($user->getRoles());
     }
 
     public function testValidEntity()
     {
-        $this->assertHasErrors($this->getEntity(), 0);
+        $this->assertHasErrors($this->setUser(), 0);
     }
 
-    public function testInvalidBlankEntity()
+    public function testInvalidBlankUsernameEntity()
     {
-        $this->assertHasErrors($this->getEntity()->setUsername(''), 2);
-        $this->assertHasErrors($this->getEntity()->setPassword(''), 2);
-        $this->assertHasErrors($this->getEntity()->setEmail(''), 1);
+        $this->assertHasErrors($this->setUser()->setUsername(''), 2);
     }
 
-    public function testInvalidMinLenghtEntity()
+    public function testInvalidBlankPasswordEntity()
     {
-        $this->assertHasErrors($this->getEntity()->setUsername('Pa'), 1);
-        $this->assertHasErrors($this->getEntity()->setPassword('Pa'), 1);
+        $this->assertHasErrors($this->setUser()->setPassword(''), 2);
     }
 
-    public function testInvalidMaxLenghtEntity()
+    public function testInvalidBlankEmailEntity()
+    {
+        $this->assertHasErrors($this->setUser()->setEmail(''), 1);
+    }
+
+    public function testInvalidMinLenghtUsernameEntity()
+    {
+        $this->assertHasErrors($this->setUser()->setUsername('Pa'), 1);
+    }
+
+    public function testInvalidMinLenghtPasswordEntity()
+    {
+        $this->assertHasErrors($this->setUser()->setPassword('Pa'), 1);
+    }
+
+    public function testInvalidMaxLenghtUsernameEntity()
     {
         $username = 'azertyuiopqsdfghjklmwxscdvvdvfbfbcvb';
 
-        $this->assertHasErrors($this->getEntity()->setUsername($username), 1);
+        $this->assertHasErrors($this->setUser()->setUsername($username), 1);
     }
 
-    public function testInvalidUniqueEntity()
+    public function testInvalidUniqueUsernameEntity()
     {
-        $this->databaseTool->loadFixtures([UserFixtures::class]);
-        $this->assertHasErrors($this->getEntity()->setUsername('user0'), 1);
-        $this->assertHasErrors($this->getEntity()->setEmail('user6@hotmail.fr'), 1);
+        $this->assertHasErrors($this->setUser()->setUsername('user0'), 1);
+    }
+
+    public function testInvalidUniqueEmailEntity()
+    {
+        $this->assertHasErrors($this->setUser()->setEmail('user6@hotmail.fr'), 1);
     }
 
     public function testInvalidEmailEntity()
     {
-        $this->assertHasErrors($this->getEntity()->setEmail('gjeojgeijigoe'), 1);
+        $this->assertHasErrors($this->setUser()->setEmail('gjeojgeijigoe'), 1);
     }
-
 }

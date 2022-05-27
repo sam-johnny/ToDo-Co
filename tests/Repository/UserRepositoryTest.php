@@ -2,29 +2,18 @@
 
 namespace App\Tests\Repository;
 
-use App\DataFixtures\UserFixtures;
 use App\Repository\UserRepository;
-use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
-use Liip\TestFixturesBundle\Services\DatabaseTools\AbstractDatabaseTool;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class UserRepositoryTest extends KernelTestCase
 {
-    /**
-     * @var AbstractDatabaseTool
-     */
-    protected AbstractDatabaseTool $databaseTool;
-
-    public function setUp(): void
+    public function testFindByIdUser()
     {
-        parent::setUp();
-        $this->databaseTool = static::getContainer()->get(DatabaseToolCollection::class)->get();
-    }
+        self::bootKernel();
 
-    public function testCount()
-    {
-        $users = self::getContainer()->get(UserRepository::class)->count([]);
-        $this->databaseTool->loadFixtures([UserFixtures::class]);
-        $this->assertEquals(10, $users);
+        $userRepository = static::getContainer()->get(UserRepository::class);
+        $users = $userRepository->findOneBy(['id' => '1']);
+
+        $this->assertSame('user1', $users->getUsername());
     }
 }

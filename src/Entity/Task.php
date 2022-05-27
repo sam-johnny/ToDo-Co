@@ -41,6 +41,11 @@ class Task
      */
     private bool $isDone;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="tasks")
+     */
+    private $User;
+
     public function __construct()
     {
         $this->createdAt = new \Datetime();
@@ -57,9 +62,10 @@ class Task
         return $this->createdAt;
     }
 
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($createdAt): self
     {
         $this->createdAt = $createdAt;
+        return $this;
     }
 
     public function getTitle(): string
@@ -84,7 +90,7 @@ class Task
         return $this;
     }
 
-    public function isDone(): bool
+    public function getIsDone(): bool
     {
         return $this->isDone;
     }
@@ -94,7 +100,7 @@ class Task
         $this->isDone = $flag;
     }
 
-    public function isIsDone(): ?bool
+    public function isDone(): ?bool
     {
         return $this->isDone;
     }
@@ -102,6 +108,18 @@ class Task
     public function setIsDone(bool $isDone): self
     {
         $this->isDone = $isDone;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->User;
+    }
+
+    public function setUser(?User $User): self
+    {
+        $this->User = $User;
 
         return $this;
     }
