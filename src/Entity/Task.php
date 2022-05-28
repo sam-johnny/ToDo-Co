@@ -50,6 +50,7 @@ class Task
     {
         $this->createdAt = new \Datetime();
         $this->isDone = false;
+        $this->isDelete = false;
     }
 
     public function getId(): ?int

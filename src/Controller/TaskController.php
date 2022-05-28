@@ -86,6 +86,15 @@ class TaskController extends AbstractController
     {
         $task->toggle(!$task->isDone());
 
+        if ($task->getIsDone() == 0){
+            $task->setIsDone(1);
+        }
+
+        if ($task->getIsDone() == 1){
+            $task->setIsDone(0);
+            
+        }
+
         $this->entityManager->flush();
         $this->addFlash('success', sprintf('La tâche %s a bien été marquée comme faite.', $task->getTitle()));
 
