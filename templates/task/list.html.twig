@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block header_img %}<img class="slide-image" src="{{ asset('img/todolist_content.jpg') }}"
-                           alt="todo list"><h1>Liste des tâches</h1>{% endblock %}
+                           alt="todo list"><h1 class="text-center">Liste des tâches</h1>{% endblock %}
 
 {% block body %}
     {% for message in app.flashes('success') %}
@@ -9,29 +9,32 @@
             {{ message }}
         </div>
     {% endfor %}
-    <a href="{{ path('task_create') }}" class="btn btn-info pull-right">Créer une tâche</a>
+    <a href="{{ path('task_create') }}" class="btn btn-info pull-right mb-2">Créer une tâche</a>
     <div class="row">
         {% for task in tasks %}
-            <div class="col-sm-4 col-lg-4 col-md-4">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h4 class="pull-right">
-                            {% if task.isDone %}<span class="glyphicon glyphicon-ok"></span>{% else %}<span
-                                    class="glyphicon glyphicon-remove"></span>{% endif %}
-                        </h4>
-                        <h4><a href="{{ path('task_edit', {'id' : task.id }) }}">{{ task.title }}</a></h4>
-                        <p>{{ task.content }}</p>
+            <div class="col-sm-4 col-lg-4 col-md-4 my-2">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <span class="badge badge bg-secondary">Non fait</span>
                     </div>
-                    <div>
-                        <form action="{{ path('task_toggle', {'id' : task.id }) }}">
-                            <button class="btn btn-success btn-sm pull-right">
-                                {% if not task.isDone %}Marquer comme faite{% else %}Marquer non terminée{% endif %}
-                            </button>
-                        </form>
-                        <form action="{{ path('task_delete', {'id' : task.id }) }}">
-                            <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
-                        </form>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h4><a class="text-dark" href="{{ path('task_edit', {'id' : task.id }) }}">{{ task.title }}</a></h4>
+                        </div>
+                        <div class="card-text">
+                            <p>{{ task.content }}</p>
+                        </div>
                     </div>
+                        <div class="card-footer d-flex">
+                            <form action="{{ path('task_toggle', {'id' : task.id }) }}">
+                                <button class="btn btn-success btn-sm pull-right me-2">
+                                    {% if not task.isDone %}Marquer comme faite{% else %}Marquer non terminée{% endif %}
+                                </button>
+                            </form>
+                            <form action="{{ path('task_delete', {'id' : task.id }) }}">
+                                <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                            </form>
+                        </div>
                 </div>
             </div>
         {% else %}

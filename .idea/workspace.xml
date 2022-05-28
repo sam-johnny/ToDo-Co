@@ -2,46 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="564042ef-a7f3-435d-a45a-fd109776022e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/Admin/AdminUserController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/Admin/AdminUserController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/Admin/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/Admin/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/Admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/Admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/DefaultController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/DefaultController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/SecurityController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/SecurityController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/TaskController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/TaskController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/UserController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/UserController.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Entity/Task.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Entity/Task.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Entity/User.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Entity/User.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Entity/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Entity/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Entity/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Entity/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/EventListener/TaskPersistListener.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/EventListener/TaskPersistListener.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/EventListener/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/EventListener/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/EventListener/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/EventListener/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Form/TaskType.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Form/TaskType.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Form/UserType.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Form/UserType.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Form/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Form/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Form/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Form/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Repository/TaskRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Repository/TaskRepository.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Repository/UserRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Repository/UserRepository.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Repository/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Repository/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Repository/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Repository/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Security/AppCustomAuthenticator.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Security/AppCustomAuthenticator.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Security/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Security/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/Security/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Security/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/_css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/_css/octicons.css" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_css/octicons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/_css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/_js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/_js/d3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_js/d3.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/_js/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_js/file.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/_js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/_js/nv.d3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_js/nv.d3.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/_js/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_js/popper.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage-test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/shop-homepage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Task.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/TaskType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TaskType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/user/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/user/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/task/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/task/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/list.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +34,13 @@
   </component>
   <component name="FileColors">
     <fileColor scope="templates" color="46340d" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -227,6 +211,7 @@
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -240,11 +225,11 @@
       <recent name="D:\Sites\Lab\ToDo-Co\src\Controller\Admin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Sites\Lab\ToDo-Co\public\js" />
+      <recent name="D:\Sites\Lab\ToDo-Co\public\css" />
       <recent name="D:\Sites\Lab\ToDo-Co\doc" />
       <recent name="D:\Sites\Lab\ToDo-Co\tests\Controller\Security" />
       <recent name="D:\Sites\Lab\ToDo-Co\tests\Controller\User" />
-      <recent name="D:\Sites\Lab\ToDo-Co\tests\Controller\Task" />
-      <recent name="D:\Sites\Lab\ToDo-Co\tests\Controller" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.TaskCreateTest">
@@ -329,6 +314,8 @@
       <workItem from="1653297027738" duration="95732000" />
       <workItem from="1653670175329" duration="704000" />
       <workItem from="1653670895974" duration="2729000" />
+      <workItem from="1653679224041" duration="12490000" />
+      <workItem from="1653735017280" duration="3456000" />
     </task>
     <servers />
   </component>
