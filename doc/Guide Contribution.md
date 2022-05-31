@@ -30,3 +30,14 @@ Lancer les tests avec génération d'un rapport de code coverage :
 ```
 php bin/phpunit --coverage-html docs/code-coverage
 ```
+Pour implémenter de nouveaux tests, se référer à la [documentation officielle de Symfony](https://symfony.com/doc/current/testing.html)
+# Standards à respecter
+- PHP Standards Recommendations (PSR)
+- Symfony Coding Standards
+
+# Les conventions de noms
+- Les classes nommez-les dans UpperCamelCase
+- Les variables, fonctions et arguments en camelCase
+
+# Outil d'analyse du code
+Codacy est un outil automatisé d'analyse / qualité du code
