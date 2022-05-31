@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Data\SearchData;
 use App\Entity\Task;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -19,6 +20,40 @@ class TaskRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Task::class);
+    }
+
+    /**
+     * Récupère les tâches en lien avec une recherche
+     * @param SearchData $search
+     * @return array
+     */
+    public function findSearch(SearchData $search): array
+    {
+        $query = $this
+            ->createQueryBuilder('t');
+
+        if (!empty($search->q)){
+            $query = $query
+                ->andWhere('t.title LIKE :q')
+                ->setParameter('q', "%{$search->q}%");
+        }
+
+        if (!empty($search->done)){
+            $query = $query
+                ->andWhere('t.isDone = 1');
+        }
+
+        if (!empty($search->toDo)){
+            $query = $query
+                ->andWhere('t.isDone = 0');
+        }
+
+        if (!empty($search->delete)){
+            $query = $query
+                ->andWhere('t.isDelete = 1');
+        }
+
+        return $query->getQuery()->getResult();
     }
 
 //    /**

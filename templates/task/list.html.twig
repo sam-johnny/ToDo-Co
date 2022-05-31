@@ -9,39 +9,27 @@
             {{ message }}
         </div>
     {% endfor %}
-    <a href="{{ path('task_create') }}" class="btn btn-info pull-right mb-2">Créer une tâche</a>
+
+    <div class="text-center mb-3">
+        <a href="{{ path('task_create') }}" class="btn btn-info">Créer une tâche</a>
+    </div>
+
     <div class="row">
-        {% for task in tasks %}
-            <div class="col-sm-4 col-lg-4 col-md-4 my-2">
-                <div class="card h-100">
-                    <div class="card-header">
-                        <span class="badge badge bg-secondary">Non fait</span>
+        <div class="col-md-2">
+            <h5 class="mb-3">Filtre :</h5>
+            {% include 'task/_filter.html.twig' %}
+        </div>
+        <div class="col-md-10">
+            <div class="grid">
+                {% for task in tasks %}
+                        {% include 'task/_card.html.twig' %}
+                {% else %}
+                    <div class="alert alert-warning" role="alert">
+                        Il n'y a pas encore de tâche enregistrée. <a href="{{ path('task_create') }}"
+                                                                     class="btn btn-warning pull-right">Créer une tâche</a>
                     </div>
-                    <div class="card-body">
-                        <div class="card-title">
-                            <h4><a class="text-dark" href="{{ path('task_edit', {'id' : task.id }) }}">{{ task.title }}</a></h4>
-                        </div>
-                        <div class="card-text">
-                            <p>{{ task.content }}</p>
-                        </div>
-                    </div>
-                        <div class="card-footer d-flex">
-                            <form action="{{ path('task_toggle', {'id' : task.id }) }}">
-                                <button class="btn btn-success btn-sm pull-right me-2">
-                                    {% if not task.isDone %}Marquer comme faite{% else %}Marquer non terminée{% endif %}
-                                </button>
-                            </form>
-                            <form action="{{ path('task_delete', {'id' : task.id }) }}">
-                                <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
-                            </form>
-                        </div>
-                </div>
+                {% endfor %}
             </div>
-        {% else %}
-            <div class="alert alert-warning" role="alert">
-                Il n'y a pas encore de tâche enregistrée. <a href="{{ path('task_create') }}"
-                                                             class="btn btn-warning pull-right">Créer une tâche</a>
-            </div>
-        {% endfor %}
+        </div>
     </div>
 {% endblock %}

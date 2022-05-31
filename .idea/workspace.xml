@@ -2,23 +2,63 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="564042ef-a7f3-435d-a45a-fd109776022e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ToDo-Co.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ToDo-Co.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/shop-homepage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/Admin/AdminUserController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/Admin/AdminUserController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/Admin/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/Admin/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/Admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/Admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/DefaultController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/DefaultController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/SecurityController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/SecurityController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/TaskController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/TaskController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/UserController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/UserController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Controller/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Controller/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Entity/Task.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Entity/Task.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Entity/User.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Entity/User.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Entity/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Entity/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Entity/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Entity/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/EventListener/TaskPersistListener.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/EventListener/TaskPersistListener.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/EventListener/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/EventListener/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/EventListener/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/EventListener/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Form/TaskType.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Form/TaskType.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Form/UserType.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Form/UserType.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Form/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Form/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Form/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Form/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Repository/TaskRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Repository/TaskRepository.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Repository/UserRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Repository/UserRepository.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Repository/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Repository/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Repository/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Repository/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Security/AppCustomAuthenticator.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Security/AppCustomAuthenticator.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Security/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Security/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/Security/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/Security/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/_css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/_css/octicons.css" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_css/octicons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/_css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/_js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/_js/d3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_js/d3.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/_js/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_js/file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/_js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_js/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/_js/nv.d3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_js/nv.d3.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/_js/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/_js/popper.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/TaskFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/TaskFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Task.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/TaskType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TaskType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/user/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/user/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TaskRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TaskRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/task/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/create.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/task/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Controller/Task/TaskControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Controller/Task/TaskControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Entity/TaskTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Entity/TaskTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,6 +233,8 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/doctrine-bridge" />
       <path value="$PROJECT_DIR$/vendor/dama/doctrine-test-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="291F1bPpv5rbQ0kPNUR8kRKc5gv" />
@@ -210,7 +252,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/task" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
@@ -220,6 +262,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Sites\Lab\ToDo-Co\templates\task" />
       <recent name="D:\Sites\Lab\ToDo-Co\templates\bundles\TwigBundle\Exception" />
       <recent name="D:\Sites\Lab\ToDo-Co\templates" />
       <recent name="D:\Sites\Lab\ToDo-Co\src\Controller\Admin" />
@@ -232,25 +275,25 @@
       <recent name="D:\Sites\Lab\ToDo-Co\tests\Controller\User" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.TaskCreateTest">
-    <configuration name="DefaultControllerTest.testH1HomePage" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="App\Tests\Controller\DefaultControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Controller/DefaultControllerTest.php" method="testH1HomePage" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="DefaultControllerTest.testRouteHomePage" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="App\Tests\Controller\DefaultControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Controller/DefaultControllerTest.php" method="testRouteHomePage" scope="Method" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="PHPUnit.TaskTest">
     <configuration name="LoginTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="App\Tests\Controller\Security\LoginTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Controller/Security/LoginTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="TaskCreateTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="App\Tests\Controller\Task\TaskCreateTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Controller/Task/TaskCreateTest.php" scope="Class" />
+    <configuration name="TaskControllerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Controller\Task\TaskControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Controller/Task/TaskControllerTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="TaskTest.testRemoveTask" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="App\Tests\Entity\TaskTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Entity/TaskTest.php" method="testRemoveTask" scope="Method" />
+    <configuration name="TaskControllerTest.testListTasks" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Controller\Task\TaskControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Controller/Task/TaskControllerTest.php" method="testListTasks" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TaskTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Entity\TaskTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Entity/TaskTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TaskTest.testIsFalseGetIsDelete" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Entity\TaskTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Entity/TaskTest.php" method="testIsFalseGetIsDelete" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -264,19 +307,19 @@
     </configuration>
     <list>
       <item itemvalue="PHPUnit.phpunit.xml.dist" />
-      <item itemvalue="PHPUnit.DefaultControllerTest.testH1HomePage" />
-      <item itemvalue="PHPUnit.DefaultControllerTest.testRouteHomePage" />
       <item itemvalue="PHPUnit.LoginTest" />
-      <item itemvalue="PHPUnit.TaskTest.testRemoveTask" />
-      <item itemvalue="PHPUnit.TaskCreateTest" />
+      <item itemvalue="PHPUnit.TaskTest" />
+      <item itemvalue="PHPUnit.TaskControllerTest" />
+      <item itemvalue="PHPUnit.TaskControllerTest.testListTasks" />
+      <item itemvalue="PHPUnit.TaskTest.testIsFalseGetIsDelete" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.TaskCreateTest" />
+        <item itemvalue="PHPUnit.TaskTest" />
+        <item itemvalue="PHPUnit.TaskTest.testIsFalseGetIsDelete" />
+        <item itemvalue="PHPUnit.TaskControllerTest.testListTasks" />
+        <item itemvalue="PHPUnit.TaskControllerTest" />
         <item itemvalue="PHPUnit.LoginTest" />
-        <item itemvalue="PHPUnit.DefaultControllerTest.testH1HomePage" />
-        <item itemvalue="PHPUnit.DefaultControllerTest.testRouteHomePage" />
-        <item itemvalue="PHPUnit.TaskTest.testRemoveTask" />
       </list>
     </recent_temporary>
   </component>
@@ -315,7 +358,9 @@
       <workItem from="1653670175329" duration="704000" />
       <workItem from="1653670895974" duration="2729000" />
       <workItem from="1653679224041" duration="12490000" />
-      <workItem from="1653735017280" duration="3456000" />
+      <workItem from="1653735017280" duration="6635000" />
+      <workItem from="1653751856296" duration="1391000" />
+      <workItem from="1653896770903" duration="28176000" />
     </task>
     <servers />
   </component>

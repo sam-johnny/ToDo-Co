@@ -18,7 +18,8 @@ class TaskFixtures extends Fixture
             $task = (new Task())
                 ->setTitle("Title{$i}")
                 ->setContent("Je suis la tâche n°{$i}")
-                ->setIsDone(false);
+                ->setIsDone(false)
+                ->setIsDelete(false);
 
             $manager->persist($task);
         }
