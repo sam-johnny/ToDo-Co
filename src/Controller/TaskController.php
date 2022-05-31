@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Data\SearchData;
 use App\Entity\Task;
 use App\Exception\UserInvalidException;
+use App\Form\SearchType;
 use App\Form\TaskType;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
@@ -26,11 +28,30 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks", name="task_list")
      */
-    public function list(ManagerRegistry $doctrine): Response
+    public function listTask(ManagerRegistry $doctrine, Request $request): Response
     {
+        $data = new SearchData();
+        $form = $this->createForm(SearchType::class, $data);
+        $form->handleRequest($request);
+        $tasks = $doctrine->getRepository(Task::class)->findSearch($data);
         return $this->render('task/list.html.twig',
             [
-                'tasks' => $doctrine->getRepository(Task::class)->findAll()
+                'tasks' => $tasks,
+                'form' => $form->createView()
+            ]);
+    }
+
+    /**
+     * @Route("/tasks/list/done", name="task_done_list")
+     */
+    public function listTaskDone(ManagerRegistry $doctrine): Response
+    {
+        return $this->render('task/listTaskDone.html.twig',
+            [
+                'tasks' => $doctrine->getRepository(Task::class)->findBy([
+                    'isDone' => true,
+                    'isDelete' => false
+                ])
             ]);
     }
 
@@ -80,24 +101,48 @@ class TaskController extends AbstractController
     }
 
     /**
-     * @Route("/tasks/{id}/toggle", name="task_toggle")
+     * @Route("/tasks/{id}/flag/done", name="task_flag_done")
      */
-    public function toggleTask(Task $task): RedirectResponse
+    public function flagDoneTask(Task $task): RedirectResponse
     {
-        $task->toggle(!$task->isDone());
+        $message = "";
 
-        if ($task->getIsDone() == 0){
-            $task->setIsDone(1);
-        }
+        if ($task->getIsDone() == false) {
 
-        if ($task->getIsDone() == 1){
-            $task->setIsDone(0);
-            
+            $task->setIsDone(true);
+            $message = sprintf('La tâche %s a bien été marquée comme faite.', $task->getTitle());
+
+        } elseif ($task->getIsDone() == true) {
+
+            $task->setIsDone(false);
+            $message = sprintf('La tâche %s a bien été marquée comme non terminée.', $task->getTitle());
         }
 
         $this->entityManager->flush();
-        $this->addFlash('success', sprintf('La tâche %s a bien été marquée comme faite.', $task->getTitle()));
+        $this->addFlash('success', $message);
+        return $this->redirectToRoute('task_list');
+    }
 
+    /**
+     * @Route("/tasks/{id}/flag/delete", name="task_flag_delete")
+     */
+    public function flagDeleteTask(Task $task): RedirectResponse
+    {
+        $message = "";
+
+        if ($task->getIsDelete() == false) {
+
+            $task->setIsDelete(true);
+            $message = sprintf('La tâche %s a bien été marquée comme faite.', $task->getTitle());
+
+        } elseif ($task->getIsDone() == true) {
+
+            $task->setIsDone(false);
+            $message = sprintf('La tâche %s a bien été marquée comme non terminée.', $task->getTitle());
+        }
+
+        $this->entityManager->flush();
+        $this->addFlash('success', $message);
         return $this->redirectToRoute('task_list');
     }
 

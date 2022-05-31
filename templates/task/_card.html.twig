@@ -1,0 +1,33 @@
+<div class="card h-100">
+    <div class="card-header">
+        {% if task.isDone == false %}
+            <span class="badge badge bg-secondary">Non fait</span>
+        {% endif %}
+        {% if task.isDone == true %}
+            <span class="badge badge bg-success">Fait</span>
+        {% endif %}
+        {% if task.isDelete == true %}
+            <span class="badge badge bg-warning">Supprimer</span>
+        {% endif %}
+    </div>
+    <div class="card-body">
+        <div class="card-title">
+            <h4><a class="text-dark" href="{{ path('task_edit', {'id' : task.id }) }}">{{ task.title }}</a></h4>
+        </div>
+        <div class="card-text">
+            <p>{{ task.content }}</p>
+        </div>
+    </div>
+    <div class="card-footer d-flex">
+        <form action="{{ path('task_flag_done', {'id' : task.id }) }}">
+                {% if not task.isDone %}
+            <button class="btn btn-success btn-sm pull-right me-2">Fait</button>
+                {% else %}
+                    <button class="btn btn-secondary btn-sm pull-right me-2">Non fait</button>
+                {% endif %}
+        </form>
+        <form action="{{ path('task_flag_delete', {'id' : task.id }) }}">
+            <button class="btn btn-danger btn-sm pull-right">Effacer</button>
+        </form>
+    </div>
+</div>

@@ -42,6 +42,11 @@ class Task
     private bool $isDone;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private bool $isDelete;
+
+    /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="tasks")
      */
     private $User;
@@ -96,20 +101,9 @@ class Task
         return $this->isDone;
     }
 
-    public function toggle($flag)
-    {
-        $this->isDone = $flag;
-    }
-
-    public function isDone(): ?bool
-    {
-        return $this->isDone;
-    }
-
     public function setIsDone(bool $isDone): self
     {
         $this->isDone = $isDone;
-
         return $this;
     }
 
@@ -122,6 +116,17 @@ class Task
     {
         $this->User = $User;
 
+        return $this;
+    }
+
+    public function getIsDelete(): bool
+    {
+        return $this->isDelete;
+    }
+
+    public function setIsDelete(bool $delete): self
+    {
+        $this->isDelete = $delete;
         return $this;
     }
 }
