@@ -35,6 +35,12 @@ class TaskControllerTest extends WebTestCase
         $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
     }
 
+    public function testRouteListDone()
+    {
+        $this->client->request('GET', $this->urlGenerator->generate('task_done_list'));
+        $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
+    }
+
     public function testTaskCreateRoute()
     {
         $this->client->request('GET', $this->urlGenerator->generate('task_create'));
@@ -78,9 +84,27 @@ class TaskControllerTest extends WebTestCase
         $this->assertResponseRedirects($this->urlGenerator->generate('app_login'));
     }
 
-    public function testToggleTasksRedirectToLogin()
+    public function testFlagDoneTaskRoute()
     {
-        $this->client->request('GET', $this->urlGenerator->generate('task_toggle', ['id' => 2]));
+        $this->client->request('GET', $this->urlGenerator->generate('task_flag_done', ['id' => 2]));
+        $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
+    }
+
+    public function testFlagDoneRedirectToLogin()
+    {
+        $this->client->request('GET', $this->urlGenerator->generate('task_flag_done', ['id' => 2]));
+        $this->assertResponseRedirects($this->urlGenerator->generate('app_login'));
+    }
+
+    public function testFlagDeleteTaskRoute()
+    {
+        $this->client->request('GET', $this->urlGenerator->generate('task_flag_delete', ['id' => 2]));
+        $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
+    }
+
+    public function testFlagDoneDeleteToLogin()
+    {
+        $this->client->request('GET', $this->urlGenerator->generate('task_flag_delete', ['id' => 2]));
         $this->assertResponseRedirects($this->urlGenerator->generate('app_login'));
     }
 }

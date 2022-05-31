@@ -82,6 +82,7 @@ class TaskController extends AbstractController
      */
     public function edit(Task $task, Request $request): RedirectResponse|Response
     {
+        $this->denyAccessUnlessGranted('TASK_EDIT', $task);
         $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
@@ -105,6 +106,7 @@ class TaskController extends AbstractController
      */
     public function flagDoneTask(Task $task): RedirectResponse
     {
+        $this->denyAccessUnlessGranted('TASK_EDIT', $task);
         $message = "";
 
         if ($task->getIsDone() == false) {
@@ -128,6 +130,7 @@ class TaskController extends AbstractController
      */
     public function flagDeleteTask(Task $task): RedirectResponse
     {
+        $this->denyAccessUnlessGranted('TASK_DELETE', $task);
         $message = "";
 
         if ($task->getIsDelete() == false) {
@@ -148,13 +151,10 @@ class TaskController extends AbstractController
 
     /**
      * @Route("/tasks/{id}/delete", name="task_delete")
-     * @throws UserInvalidException
      */
     public function deleteTask(Task $task, Security $security): RedirectResponse
     {
-        if (($task->getUser() !== $security->getUser() && !$this->isGranted('ROLE_ADMIN'))) {
-            throw new UserInvalidException("Vous n'êtes pas l'auteur de la tâche !");
-        }
+        $this->denyAccessUnlessGranted('TASK_DELETE', $task);
 
         $this->entityManager->remove($task);
         $this->entityManager->flush();
