@@ -14,7 +14,7 @@ class TaskFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        for ($i = 1; $i < 15; $i++) {
+        for ($i = 1; $i < 6; $i++) {
             $task = (new Task())
                 ->setTitle("Title{$i}")
                 ->setContent("Je suis la tâche n°{$i}")
@@ -23,6 +23,18 @@ class TaskFixtures extends Fixture
 
             $manager->persist($task);
         }
+
+        for ($i = 6; $i < 12; $i++) {
+            $task = (new Task())
+                ->setTitle("Title{$i}")
+                ->setContent("Je suis la tâche n°{$i}")
+                ->setIsDone(true)
+                ->setIsDelete(false);
+
+            $manager->persist($task);
+        }
+
+
         $manager->flush();
     }
 }

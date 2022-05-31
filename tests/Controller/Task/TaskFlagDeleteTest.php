@@ -15,7 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
-class TaskToggleTest extends WebTestCase
+class TaskFlagDeleteTest extends WebTestCase
 {
     private ?Router $urlGenerator;
 
@@ -27,10 +27,10 @@ class TaskToggleTest extends WebTestCase
         $user = $userRepository->findOneBy(['username' => 'user11']);
         $client->loginUser($user);
         $this->urlGenerator = $client->getContainer()->get('router.default');
-        $client->request('GET', $this->urlGenerator->generate('task_toggle', ['id' => 4]));
+        $client->request('GET', $this->urlGenerator->generate('task_flag_delete', ['id' => 4]));
     }
 
-    public function testToggleTask()
+    public function testFlagDoneTask()
     {
         $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
         $this->assertResponseRedirects($this->urlGenerator->generate('task_list'));
