@@ -95,16 +95,4 @@ class TaskControllerTest extends WebTestCase
         $this->client->request('GET', $this->urlGenerator->generate('task_flag_done', ['id' => 2]));
         $this->assertResponseRedirects($this->urlGenerator->generate('app_login'));
     }
-
-    public function testFlagDeleteTaskRoute()
-    {
-        $this->client->request('GET', $this->urlGenerator->generate('task_flag_delete', ['id' => 2]));
-        $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
-    }
-
-    public function testFlagDoneDeleteToLogin()
-    {
-        $this->client->request('GET', $this->urlGenerator->generate('task_flag_delete', ['id' => 2]));
-        $this->assertResponseRedirects($this->urlGenerator->generate('app_login'));
-    }
 }
