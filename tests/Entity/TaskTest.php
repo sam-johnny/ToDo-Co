@@ -40,7 +40,6 @@ class TaskTest extends KernelTestCase
             ->setContent('Je suis le contenu')
             ->setCreatedAt($this->datetime)
             ->setIsDone(false)
-            ->setIsDelete(false)
             ->setUser(null);
     }
 
@@ -64,11 +63,6 @@ class TaskTest extends KernelTestCase
         $this->assertTrue($this->setTask()->getIsDone() === false);
     }
 
-    public function testIsTrueGetIsDelete()
-    {
-        $this->assertTrue($this->setTask()->getIsDelete() === false);
-    }
-
     public function testIdIsEmpty()
     {
         $task = new Task();
@@ -79,12 +73,6 @@ class TaskTest extends KernelTestCase
     {
         $task = new Task();
         $this->assertEmpty($task->getUser());
-    }
-
-    public function testisDeleteIsEmpty()
-    {
-        $task = new Task();
-        $this->assertEmpty($task->getIsDelete());
     }
 
 
@@ -101,11 +89,6 @@ class TaskTest extends KernelTestCase
     public function testIsFalseGetIsDone()
     {
         $this->assertFalse($this->setTask()->getIsDone() === true);
-    }
-
-    public function testIsFalseGetIsDelete()
-    {
-        $this->assertFalse($this->setTask()->getIsDelete() === true);
     }
 
     public function testValidEntity()

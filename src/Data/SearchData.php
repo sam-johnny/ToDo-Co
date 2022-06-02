@@ -19,6 +19,4 @@ class SearchData
     public bool $done = false;
 
     public bool $toDo = false;
-
-    public bool $delete = false;
 }

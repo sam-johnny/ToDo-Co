@@ -30,25 +30,26 @@ class TaskRepository extends ServiceEntityRepository
     public function findSearch(SearchData $search): array
     {
         $query = $this
-            ->createQueryBuilder('t');
+            ->createQueryBuilder('t')
+            ->orderBy('t.createdAt', 'DESC');
 
-        if (!empty($search->q)){
+        if (!empty($search->q)) {
             $query = $query
                 ->andWhere('t.title LIKE :q')
                 ->setParameter('q', "%{$search->q}%");
         }
 
-        if (!empty($search->done)){
+        if (!empty($search->done)) {
             $query = $query
-                ->andWhere('t.isDone = 1');
+                ->andWhere('t.isDone = 1', 't.isDelete = 0');
         }
 
-        if (!empty($search->toDo)){
+        if (!empty($search->toDo)) {
             $query = $query
                 ->andWhere('t.isDone = 0');
         }
 
-        if (!empty($search->delete)){
+        if (!empty($search->delete)) {
             $query = $query
                 ->andWhere('t.isDelete = 1');
         }

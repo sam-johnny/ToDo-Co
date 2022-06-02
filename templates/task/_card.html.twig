@@ -6,22 +6,21 @@
         {% if task.isDone == true %}
             <span class="badge badge bg-success">Fait</span>
         {% endif %}
-        {% if task.isDelete == true %}
-            <span class="badge badge bg-danger">Effacer</span>
-        {% endif %}
     </div>
     <div class="card-body">
         <div class="card-title">
             <h4><a class="text-dark" href="{{ path('task_edit', {'id' : task.id }) }}">{{ task.title }}</a></h4>
         </div>
         <p class="card-text">{{ task.content }}</p>
-        <p class="card-text"><small class="text-muted">Edité par
-                {% if task.user %}
-                    <i>{{ task.user.username }}</i>
-                {% else %}
-                    <i>Anonyme</i>
-                {% endif %}
-            </small></p>
+        <small class="card-text text-muted">Edité par
+            {% if task.user %}
+                <i>{{ task.user.username }}</i>
+            {% else %}
+                <i>Anonyme</i>
+            {% endif %}
+        </small>
+        <br>
+        <small class="card-text text-muted">Crée le <i>{{ task.createdAt | date('d-m-Y') }}</i></small>
     </div>
 
     <div class="card-footer d-flex">
@@ -32,12 +31,8 @@
                 <button class="btn btn-secondary btn-sm pull-right me-2">Non fait</button>
             {% endif %}
         </form>
-        <form action="{{ path('task_flag_delete', {'id' : task.id }) }}">
-            {% if not task.isDelete %}
-                <button class="btn btn-danger btn-sm pull-right me-2">Effacer</button>
-            {% else %}
-                <button class="btn btn-warning btn-sm pull-right me-2">Restaurer</button>
-            {% endif %}
+        <form action="{{ path('task_delete', {'id' : task.id }) }}">
+            <button class="btn btn-danger btn-sm pull-right me-2">Effacer</button>
         </form>
     </div>
 </div>

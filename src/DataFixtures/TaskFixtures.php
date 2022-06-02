@@ -18,8 +18,8 @@ class TaskFixtures extends Fixture
             $task = (new Task())
                 ->setTitle("Title{$i}")
                 ->setContent("Je suis la tâche n°{$i}")
-                ->setIsDone(false)
-                ->setIsDelete(false);
+                ->setIsDone(false);
+
 
             $manager->persist($task);
         }
@@ -28,12 +28,10 @@ class TaskFixtures extends Fixture
             $task = (new Task())
                 ->setTitle("Title{$i}")
                 ->setContent("Je suis la tâche n°{$i}")
-                ->setIsDone(true)
-                ->setIsDelete(false);
+                ->setIsDone(true);
 
             $manager->persist($task);
         }
-
 
         $manager->flush();
     }

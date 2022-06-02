@@ -42,11 +42,6 @@ class Task
     private bool $isDone;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
-    private bool $isDelete;
-
-    /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="tasks")
      */
     private $User;
@@ -55,7 +50,6 @@ class Task
     {
         $this->createdAt = new \Datetime();
         $this->isDone = false;
-        $this->isDelete = false;
     }
 
     public function getId(): ?int
@@ -116,17 +110,6 @@ class Task
     {
         $this->User = $User;
 
-        return $this;
-    }
-
-    public function getIsDelete(): bool
-    {
-        return $this->isDelete;
-    }
-
-    public function setIsDelete(bool $delete): self
-    {
-        $this->isDelete = $delete;
         return $this;
     }
 }
