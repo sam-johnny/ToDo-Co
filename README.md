@@ -13,19 +13,26 @@ Amélioration et documentation d'un projet existant ToDo & Co.
 ```
     composer install
 ```
-4. Créez la base de données si elle n'existe pas déjà, taper la commande ci-dessous en vous plaçant dans le répertoire du projet :
+4. Décommentez la partie du code suivant :
+```
+     // config/services.yaml
+    App\EventListener\UserListener:
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+```
+5. Créez la base de données si elle n'existe pas déjà, taper la commande ci-dessous en vous plaçant dans le répertoire du projet :
 ```
     php bin/console doctrine:database:create
 ```
-5. Créez les différentes tables de la base de données en appliquant les migrations :
+6. Créez les différentes tables de la base de données en appliquant les migrations :
 ```
     php bin/console doctrine:schema:create
 ```
-6. (Optionnel) Installez les fixtures pour avoir une démo de données fictives en développement :
+7. (Optionnel) Installez les fixtures pour avoir une démo de données fictives en développement :
 ```
     php app/console doctrine:fixtures:load --env=dev
 ```
-7. Identifiants pour tester l'application
+8. Identifiants pour tester l'application
 ```
     >Role_Admin
     username: user11
