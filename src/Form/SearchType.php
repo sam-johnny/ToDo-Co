@@ -36,10 +36,6 @@ class SearchType extends AbstractType
                'label' => 'Non fait',
                'required' => false
            ])
-           ->add('delete', CheckboxType::class, [
-               'label' => 'Effacer',
-               'required' => false
-           ])
        ;
     }
 

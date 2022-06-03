@@ -4,9 +4,9 @@ namespace App\Controller;
 
 use App\Data\SearchData;
 use App\Entity\Task;
-use App\Exception\UserInvalidException;
 use App\Form\SearchType;
 use App\Form\TaskType;
+use App\Service\DeleteTaskService;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -28,7 +28,7 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks", name="task_list")
      */
-    public function listTask(ManagerRegistry $doctrine, Request $request): Response
+    public function list(ManagerRegistry $doctrine, Request $request, DeleteTaskService $deleteTaskAuto): Response
     {
         $data = new SearchData();
         $form = $this->createForm(SearchType::class, $data);
@@ -49,8 +49,7 @@ class TaskController extends AbstractController
         return $this->render('task/listTaskDone.html.twig',
             [
                 'tasks' => $doctrine->getRepository(Task::class)->findBy([
-                    'isDone' => true,
-                    'isDelete' => false
+                    'isDone' => true
                 ])
             ]);
     }
@@ -112,30 +111,6 @@ class TaskController extends AbstractController
         if ($task->getIsDone() == false) {
 
             $task->setIsDone(true);
-            $message = sprintf('La tâche %s a bien été marquée comme faite.', $task->getTitle());
-
-        } elseif ($task->getIsDone() == true) {
-
-            $task->setIsDone(false);
-            $message = sprintf('La tâche %s a bien été marquée comme non terminée.', $task->getTitle());
-        }
-
-        $this->entityManager->flush();
-        $this->addFlash('success', $message);
-        return $this->redirectToRoute('task_list');
-    }
-
-    /**
-     * @Route("/tasks/{id}/flag/delete", name="task_flag_delete")
-     */
-    public function flagDeleteTask(Task $task): RedirectResponse
-    {
-        $this->denyAccessUnlessGranted('TASK_DELETE', $task);
-        $message = "";
-
-        if ($task->getIsDelete() == false) {
-
-            $task->setIsDelete(true);
             $message = sprintf('La tâche %s a bien été marquée comme faite.', $task->getTitle());
 
         } elseif ($task->getIsDone() == true) {
