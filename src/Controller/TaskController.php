@@ -106,18 +106,9 @@ class TaskController extends AbstractController
     public function flagDoneTask(Task $task): RedirectResponse
     {
         $this->denyAccessUnlessGranted('TASK_EDIT', $task);
-        $message = "";
 
-        if ($task->getIsDone() == false) {
-
-            $task->setIsDone(true);
-            $message = sprintf('La tâche %s a bien été marquée comme faite.', $task->getTitle());
-
-        } elseif ($task->getIsDone() == true) {
-
-            $task->setIsDone(false);
-            $message = sprintf('La tâche %s a bien été marquée comme non terminée.', $task->getTitle());
-        }
+        //set IsDone and return message
+        $message = $flagTaskService->flagTask($task);
 
         $this->entityManager->flush();
         $this->addFlash('success', $message);
