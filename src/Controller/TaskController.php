@@ -7,6 +7,7 @@ use App\Entity\Task;
 use App\Form\SearchType;
 use App\Form\TaskType;
 use App\Service\DeleteTaskService;
+use App\Service\FlagTaskService;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -103,7 +104,7 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks/{id}/flag/done", name="task_flag_done")
      */
-    public function flagDoneTask(Task $task): RedirectResponse
+    public function flagDoneTask(Task $task, FlagTaskService $flagTaskService): RedirectResponse
     {
         $this->denyAccessUnlessGranted('TASK_EDIT', $task);
 
