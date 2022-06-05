@@ -57,7 +57,7 @@ class TaskControllerTest extends WebTestCase
     {
         $this->client->request('GET', $this->urlGenerator->generate('task_list'));
         $users = count($this->taskRepository->findAll());
-        $this->assertEquals(14, $users);
+        $this->assertEquals(11, $users);
     }
 
     public function testEditTaskRoute()

@@ -13,6 +13,7 @@ use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Response;
 
 class TaskEditTest extends WebTestCase
 {
@@ -54,7 +55,6 @@ class TaskEditTest extends WebTestCase
         $this->client->loginUser($user);
 
         $this->client->request('GET', $this->urlGenerator->generate('task_edit', ['id' => 4]));
-        $this->assertResponseIsSuccessful();
-        $this->assertSelectorTextContains('button', 'Modifier');
+        $this->assertResponseStatusCodeSame(Response::HTTP_FORBIDDEN);
     }
 }
