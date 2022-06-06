@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller\Admin;
 
 use App\Entity\User;
@@ -13,7 +14,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AdminUserController extends AbstractController
 {
-
     private EntityManagerInterface $entityManager;
 
     /**
@@ -35,7 +35,6 @@ class AdminUserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $user->setPassword($passwordHasher->hashPassword($user, $user->getPassword()));
 
             $this->entityManager->persist($user);
@@ -52,14 +51,17 @@ class AdminUserController extends AbstractController
     /**
      * @Route("admin/users/{id}/edit", name="user_edit")
      */
-    public function edit(User $user, Request $request, UserPasswordHasherInterface $passwordHasher): RedirectResponse|Response
+    public function edit(
+        User                        $user,
+        Request                     $request,
+        UserPasswordHasherInterface $passwordHasher
+    ): RedirectResponse|Response
     {
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $user->setPassword($passwordHasher->hashPassword($user, $user->getPassword()));
 
             $this->entityManager->flush();

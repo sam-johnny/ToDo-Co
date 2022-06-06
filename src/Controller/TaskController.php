@@ -7,6 +7,7 @@ use App\Entity\Task;
 use App\Form\SearchType;
 use App\Form\TaskType;
 use App\Service\DeleteTaskService;
+use App\Service\FlagTaskService;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -34,11 +35,10 @@ class TaskController extends AbstractController
         $form = $this->createForm(SearchType::class, $data);
         $form->handleRequest($request);
         $tasks = $doctrine->getRepository(Task::class)->findSearch($data);
-        return $this->render('task/list.html.twig',
-            [
-                'tasks' => $tasks,
-                'form' => $form->createView()
-            ]);
+        return $this->render('task/list.html.twig', [
+            'tasks' => $tasks,
+            'form' => $form->createView()
+        ]);
     }
 
     /**
@@ -46,12 +46,9 @@ class TaskController extends AbstractController
      */
     public function listTaskDone(ManagerRegistry $doctrine): Response
     {
-        return $this->render('task/listTaskDone.html.twig',
-            [
-                'tasks' => $doctrine->getRepository(Task::class)->findBy([
-                    'isDone' => true
-                ])
-            ]);
+        return $this->render('task/listTaskDone.html.twig', [
+            'tasks' => $doctrine->getRepository(Task::class)->findBy(['isDone' => true])
+        ]);
     }
 
     /**
@@ -87,7 +84,6 @@ class TaskController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $this->entityManager->flush();
             $this->addFlash('success', 'La tâche a bien été modifiée.');
 
@@ -103,7 +99,7 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks/{id}/flag/done", name="task_flag_done")
      */
-    public function flagDoneTask(Task $task): RedirectResponse
+    public function flagDoneTask(Task $task, FlagTaskService $flagTaskService): RedirectResponse
     {
         $this->denyAccessUnlessGranted('TASK_EDIT', $task);
 
