@@ -35,11 +35,10 @@ class TaskController extends AbstractController
         $form = $this->createForm(SearchType::class, $data);
         $form->handleRequest($request);
         $tasks = $doctrine->getRepository(Task::class)->findSearch($data);
-        return $this->render('task/list.html.twig',
-            [
-                'tasks' => $tasks,
-                'form' => $form->createView()
-            ]);
+        return $this->render('task/list.html.twig', [
+            'tasks' => $tasks,
+            'form' => $form->createView()
+        ]);
     }
 
     /**
@@ -47,12 +46,9 @@ class TaskController extends AbstractController
      */
     public function listTaskDone(ManagerRegistry $doctrine): Response
     {
-        return $this->render('task/listTaskDone.html.twig',
-            [
-                'tasks' => $doctrine->getRepository(Task::class)->findBy([
-                    'isDone' => true
-                ])
-            ]);
+        return $this->render('task/listTaskDone.html.twig', [
+            'tasks' => $doctrine->getRepository(Task::class)->findBy(['isDone' => true])
+        ]);
     }
 
     /**
@@ -88,7 +84,6 @@ class TaskController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $this->entityManager->flush();
             $this->addFlash('success', 'La tâche a bien été modifiée.');
 

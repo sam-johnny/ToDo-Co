@@ -31,7 +31,6 @@ class TaskPersistListener
         $entity = $args->getEntity();
 
         if ($entity instanceof Task) {
-
             $user = $this->tokenStorage->getToken()->getUser();
 
             $entity->setUser($user);

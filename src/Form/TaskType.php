@@ -18,8 +18,7 @@ class TaskType extends AbstractType
             ])
             ->add('content', TextareaType::class, [
                 'label' => 'Contenu'
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

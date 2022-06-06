@@ -16,11 +16,8 @@ class FlagTaskService
     public function flagTask(Task $task): ?string
     {
         if ($task->getIsDone() == false) {
-
             return $this->flagIsNotDone($task);
-
         } elseif ($task->getIsDone() == true) {
-
             return $this->flagIsDone($task);
         }
 
