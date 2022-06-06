@@ -20,23 +20,20 @@ class SearchType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-       $builder
-           ->add('q', TextType::class, [
-               'label' => false,
-               'required' => false,
-               'attr' => [
-                   'placeholder' => 'Rechercher'
-               ]
-           ])
-           ->add('done', CheckboxType::class, [
-               'label' => 'Fait',
-               'required' => false
-           ])
-           ->add('toDo', CheckboxType::class, [
-               'label' => 'Non fait',
-               'required' => false
-           ])
-       ;
+        $builder
+            ->add('q', TextType::class, [
+                'label' => false,
+                'required' => false,
+                'attr' => ['placeholder' => 'Rechercher']
+            ])
+            ->add('done', CheckboxType::class, [
+                'label' => 'Fait',
+                'required' => false
+            ])
+            ->add('toDo', CheckboxType::class, [
+                'label' => 'Non fait',
+                'required' => false
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

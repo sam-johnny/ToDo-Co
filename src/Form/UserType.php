@@ -25,27 +25,26 @@ class UserType extends AbstractType
                 'type' => PasswordType::class,
                 'invalid_message' => 'Les deux mots de passe doivent correspondre.',
                 'required' => true,
-                'first_options'  => ['label' => 'Mot de passe: '],
-                'second_options' => ['label' => 'Confirmez le mot de passe: '],
+                'first_options' => ['label' => 'Mot de passe: '],
+                'second_options' => ['label' => 'Confirmez le mot de passe: ']
             ])
-            ->add('email', EmailType::class,
-                ['label' => 'Adresse email'
-                ])
+            ->add('email', EmailType::class, [
+                'label' => 'Adresse email'
+            ])
             ->add('roles', ChoiceType::class, [
                 'label' => 'Rôles',
                 'choices' => [
                     'Administrateur' => 'ROLE_ADMIN',
                     'Utilisateur' => 'ROLE_USER'
-                ],
-            ])
-        ;
+                ]
+            ]);
 
         // Data transformer
         $builder->get('roles')
             ->addModelTransformer(new CallbackTransformer(
                 function ($rolesArray) {
                     // transform the array to a string
-                    return count($rolesArray)? $rolesArray[0]: null;
+                    return count($rolesArray) ? $rolesArray[0] : null;
                 },
                 function ($rolesString) {
                     // transform the string back to an array

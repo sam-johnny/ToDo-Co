@@ -48,11 +48,12 @@
 <!-- Page Content -->
 <div class="container">
     <div class="d-flex justify-content-between my-2">
-        <div class="me-auto">
-            {% if is_granted('ROLE_ADMIN') %}
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="me-auto">
                 <a href="{{ path('user_create') }}" class="btn btn-primary">Créer un utilisateur</a>
-            {% endif %}
-        </div>
+            </div>
+            <a href="{{ path('user_list') }}" class="btn btn-primary">Liste des utilisateurs</a>
+        {% endif %}
         <div class="ms-auto">
             {% if app.user %}
                 <a href="{{ path('app_logout') }}" class="pull-right btn btn-danger">Se déconnecter</a>
@@ -77,7 +78,9 @@
                     <strong>Oops !</strong> {{ flash_message }}
                 </div>
             {% endfor %}
-            {% block header_title %}{% endblock %}
+            <div class="text-center">
+                {% block header_title %}{% endblock %}
+            </div>
             {% block header_img %}<img class="slide-image" src="{{ asset('img/todolist_homepage.jpg') }}"
                                        alt="todo list">{% endblock %}
         </div>
