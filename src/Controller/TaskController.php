@@ -6,8 +6,7 @@ use App\Data\SearchData;
 use App\Entity\Task;
 use App\Form\SearchType;
 use App\Form\TaskType;
-use App\Service\DeleteTaskService;
-use App\Service\FlagTaskService;
+use App\Service\ToggleTaskService;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,7 +14,6 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Security;
 
 class TaskController extends AbstractController
 {
@@ -29,7 +27,7 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks", name="task_list")
      */
-    public function list(ManagerRegistry $doctrine, Request $request, DeleteTaskService $deleteTaskAuto): Response
+    public function list(ManagerRegistry $doctrine, Request $request): Response
     {
         $data = new SearchData();
         $form = $this->createForm(SearchType::class, $data);
@@ -97,14 +95,14 @@ class TaskController extends AbstractController
     }
 
     /**
-     * @Route("/tasks/{id}/flag/done", name="task_flag_done")
+     * @Route("/tasks/{id}/toggle/done", name="task_toggle_done")
      */
-    public function flagDoneTask(Task $task, FlagTaskService $flagTaskService): RedirectResponse
+    public function toggleDone(Task $task, ToggleTaskService $toggleTaskService): RedirectResponse
     {
         $this->denyAccessUnlessGranted('TASK_EDIT', $task);
 
         //set IsDone and return message
-        $message = $flagTaskService->flagTask($task);
+        $message = $toggleTaskService->toggleTask($task);
 
         $this->entityManager->flush();
         $this->addFlash('success', $message);
@@ -114,7 +112,7 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks/{id}/delete", name="task_delete")
      */
-    public function deleteTask(Task $task, Security $security): RedirectResponse
+    public function deleteTask(Task $task): RedirectResponse
     {
         $this->denyAccessUnlessGranted('TASK_DELETE', $task);
 
