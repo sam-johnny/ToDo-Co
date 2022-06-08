@@ -24,7 +24,7 @@
     </div>
 
     <div class="card-footer d-flex">
-        <form action="{{ path('task_flag_done', {'id' : task.id }) }}">
+        <form action="{{ path('task_toggle_done', {'id' : task.id }) }}">
             {% if not task.isDone %}
                 <button class="btn btn-success btn-sm pull-right me-2">Fait</button>
             {% else %}
