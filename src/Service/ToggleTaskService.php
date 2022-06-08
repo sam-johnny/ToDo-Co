@@ -11,26 +11,26 @@ namespace App\Service;
 
 use App\Entity\Task;
 
-class FlagTaskService
+class ToggleTaskService
 {
-    public function flagTask(Task $task): ?string
+    public function toggleTask(Task $task): ?string
     {
         if ($task->getIsDone() == false) {
-            return $this->flagIsNotDone($task);
+            return $this->toggleIsNotDone($task);
         } elseif ($task->getIsDone() == true) {
-            return $this->flagIsDone($task);
+            return $this->toggleIsDone($task);
         }
 
         return null;
     }
 
-    private function flagIsDone(Task $task): string
+    private function toggleIsDone(Task $task): string
     {
         $task->setIsDone(false);
         return sprintf('La tâche %s a bien été marquée comme non terminée.', $task->getTitle());
     }
 
-    private function flagIsNotDone(Task $task): string
+    private function toggleIsNotDone(Task $task): string
     {
         $task->setIsDone(true);
         return sprintf('La tâche %s a bien été marquée comme faite.', $task->getTitle());

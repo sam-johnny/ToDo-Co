@@ -32,7 +32,7 @@ class TaskFlagDoneTest extends WebTestCase
 
     public function testFlagDoneTask()
     {
-        $this->client->request('GET', $this->urlGenerator->generate('task_flag_done', ['id' => 4]));
+        $this->client->request('GET', $this->urlGenerator->generate('task_toggle_done', ['id' => 4]));
         $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
         $this->assertResponseRedirects($this->urlGenerator->generate('task_list'));
     }
