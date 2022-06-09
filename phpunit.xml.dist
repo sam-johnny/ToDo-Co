@@ -32,8 +32,8 @@
         </include>
         <exclude>
             <file>src/Kernel.php</file>
+            <directory>src/Command</directory>
             <directory>src/DataFixtures</directory>
-            <directory>src/Exception</directory>
             <directory>src/Data</directory>
         </exclude>
     </coverage>
