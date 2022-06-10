@@ -11,7 +11,6 @@ use Doctrine\Persistence\ObjectManager;
  */
 class TaskFixtures extends Fixture
 {
-
     public function load(ObjectManager $manager)
     {
         for ($i = 1; $i < 6; $i++) {

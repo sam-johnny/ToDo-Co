@@ -9,7 +9,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class SecurityControllerTest extends WebTestCase
 {
-
     private KernelBrowser $client;
     private Router $urlGenerator;
 

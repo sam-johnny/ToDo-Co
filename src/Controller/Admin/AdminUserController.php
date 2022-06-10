@@ -52,11 +52,10 @@ class AdminUserController extends AbstractController
      * @Route("admin/users/{id}/edit", name="user_edit")
      */
     public function edit(
-        User                        $user,
-        Request                     $request,
+        User $user,
+        Request $request,
         UserPasswordHasherInterface $passwordHasher
-    ): RedirectResponse|Response
-    {
+    ): RedirectResponse|Response {
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);

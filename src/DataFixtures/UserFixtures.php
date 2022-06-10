@@ -11,7 +11,6 @@ use Doctrine\Persistence\ObjectManager;
  */
 class UserFixtures extends Fixture
 {
-
     public function load(ObjectManager $manager)
     {
         for ($i = 1; $i < 11; $i++) {
