@@ -2,8 +2,6 @@
 
 namespace App\Tests\Entity;
 
-
-use App\Entity\Task;
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Validator\ConstraintViolation;

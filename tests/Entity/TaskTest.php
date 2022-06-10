@@ -117,7 +117,7 @@ class TaskTest extends KernelTestCase
 
     public function testRemoveTask()
     {
-        $user= new User();
+        $user = new User();
         $task = new Task();
 
         $user->removeTask($task);
