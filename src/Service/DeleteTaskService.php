@@ -29,5 +29,4 @@ class DeleteTaskService extends ServiceEntityRepository
         $prepare = $connection->prepare($sql);
         $prepare->executeQuery();
     }
-
 }
