@@ -52,7 +52,7 @@ class TaskVoter extends Voter
                 break;
         }
 
-        return false;
+        throw new \LogicException('This code should not be reached!');
     }
 
     private function canEdit(Task $task, $user): bool
