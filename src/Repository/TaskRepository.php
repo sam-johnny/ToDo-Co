@@ -41,19 +41,13 @@ class TaskRepository extends ServiceEntityRepository
 
         if (!empty($search->done)) {
             $query = $query
-                ->andWhere('t.isDone = 1', 't.isDelete = 0');
+                ->andWhere('t.isDone = 1');
         }
 
         if (!empty($search->toDo)) {
             $query = $query
                 ->andWhere('t.isDone = 0');
         }
-
-        if (!empty($search->delete)) {
-            $query = $query
-                ->andWhere('t.isDelete = 1');
-        }
-
         return $query->getQuery()->getResult();
     }
 
