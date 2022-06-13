@@ -9,8 +9,8 @@ before_script:
   - composer install
 
 script:
-  - php bin/phpunit tests/Security/SecurityControllerTest.php
   - php bin/phpunit tests/Entity/TaskTest.php
   - php bin/phpunit tests/Entity/UserTest.php
   - php bin/phpunit tests/Entity/TaskValidatorTest.php
   - php bin/phpunit tests/Controller/DefaultControllerTest.php
+  - php bin/phpunit tests/Controller/Security/SecurityControllerTest.php
