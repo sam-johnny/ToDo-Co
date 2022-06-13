@@ -91,21 +91,6 @@ class TaskTest extends KernelTestCase
         $this->assertFalse($this->setTask()->getIsDone() === true);
     }
 
-    public function testValidEntity()
-    {
-        $this->assertHasErrors($this->setTask(), 0);
-    }
-
-    public function testInvalidBlankTitleEntity()
-    {
-        $this->assertHasErrors($this->setTask()->setTitle(''), 1);
-    }
-
-    public function testInvalidBlankContentEntity()
-    {
-        $this->assertHasErrors($this->setTask()->setContent(''), 1);
-    }
-
     public function testAddTask()
     {
         $user = new User();
