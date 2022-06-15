@@ -75,4 +75,17 @@ class AdminUserController extends AbstractController
             'user' => $user
         ]);
     }
+
+    /**
+     * @Route("/admin/users/{id}/delete", name="user_delete")
+     */
+    public function deleteTask(User $user): RedirectResponse
+    {
+        $this->entityManager->remove($user);
+        $this->entityManager->flush();
+
+        $this->addFlash('success', "L'utilisateur a bien été supprimée.");
+
+        return $this->redirectToRoute('user_list');
+    }
 }
