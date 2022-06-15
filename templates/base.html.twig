@@ -46,6 +46,7 @@
 
 <body class="d-flex flex-column min-vh-100 p-0">
 <!-- Page Content -->
+{% block header_button %}
 <div class="container">
     <div class="d-flex justify-content-between my-2">
         {% if is_granted('ROLE_ADMIN') %}
@@ -64,6 +65,7 @@
             <a href="{{ path('app_login') }}" class="btn btn-success">Se connecter</a>
         {% endif %}
     </div>
+    {% endblock %}
 
     <div class="row">
         <div class="col-md-12">
