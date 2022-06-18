@@ -19,11 +19,11 @@ Amélioration et documentation d'un projet existant ToDo & Co.
 ```
 5. Créez les différentes tables de la base de données en appliquant les migrations:
 ```
-    php bin/console doctrine:schema:create
+    php bin/console doctrine:migrations:migrate
 ```
 6. (Optionnel) Installez les fixtures pour avoir une démo de données fictives en développement:
 ```
-    php app/console doctrine:fixtures:load --env=dev
+    php bin/console doctrine:fixtures:load --env=dev
 ```
 7. Décommentez la partie du code suivant:
 ```
