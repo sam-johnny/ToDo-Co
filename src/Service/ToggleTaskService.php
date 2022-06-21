@@ -15,9 +15,9 @@ class ToggleTaskService
 {
     public function toggleTask(Task $task): ?string
     {
-        if ($task->getIsDone() == false) {
+        if ($task->getIsDone() === false) {
             return $this->toggleIsNotDone($task);
-        } elseif ($task->getIsDone() == true) {
+        } elseif ($task->getIsDone() === true) {
             return $this->toggleIsDone($task);
         }
 
