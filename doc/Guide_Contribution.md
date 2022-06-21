@@ -24,7 +24,7 @@ git push origin <branche>
 ```
 6. Ouvrir une pull request sur le répertoire Github du projet
 
-# Processus de qualité
+# Processus pour tester
 
 Lancer les tests avec génération d'un rapport de code coverage :
 ```
