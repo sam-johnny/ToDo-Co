@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block header_img %}<img class="slide-image" src="{{ asset('img/todolist_content.jpg') }}"
+{% block header_img %}<img class="w-100 img-fluid" src="{{ asset('img/todolist_content.jpg') }}"
                            alt="todo list"><h1 class="text-center">Liste des tâches terminées</h1>{% endblock %}
 
 {% block body %}
@@ -15,9 +15,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-2">
-        </div>
-        <div class="col-md-10">
+        <div class="col-md-12">
             <div class="grid">
                 {% for task in tasks %}
                         {% include 'task/_card.html.twig' %}
