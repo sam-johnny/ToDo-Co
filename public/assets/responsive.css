@@ -1,0 +1,18 @@
+@media all and (max-width: 1024px) {
+    #button-home{
+        text-align: center;
+    }
+}
+
+@media all and (min-width: 1024px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+    }
+    #button-home {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
